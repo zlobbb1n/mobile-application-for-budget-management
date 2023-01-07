@@ -12,9 +12,8 @@ import Select from '@mui/material/Select';
 import { InputLabel } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import Chart from '../components/Chart';
-import Totals from '../components/Totals';
-import IncExpButton from '../components/IncExpButton';
-import Income from '../components/Income';
+import Totals from '../UI/Totals';
+import IncExpButton from '../UI/IncExpButton';
 import Expenses from '../components/Expenses';
 
 const SyledHome = styled(Typography)({
@@ -40,10 +39,22 @@ export default function Overview(){
         setPeriod(event.target.value);
     };
     return(
-        <React.Fragment>
-            <AppBar position = "relative" color = "inherit" sx = {{ top: 0, bottom: 'auto' }}>
+        <>
+            <AppBar 
+                position = "relative" 
+                color = "inherit" 
+                sx = {{ 
+                    top: 0, 
+                    bottom: 'auto',
+                    boxShadow: 'none'  
+                }}>
                 <Toolbar>
-                <IconButton color = "inherit" >
+                <IconButton 
+                    color = "inherit"
+                    sx = {{ 
+                        background: 'rgba(0, 0, 0, 0.03)',
+                        borderRadius: 2
+                    }}>
                     <WindowRoundedIcon />
                 </IconButton>
                     <SyledHome variant = 'h5'>Overview</SyledHome>
@@ -87,9 +98,9 @@ export default function Overview(){
                 <Chart/>  
                 </Box>
                 <IncExpButton/>
-                <Income/><Expenses/>
+                <Expenses/>
             </Paper>
             <BottomNavBar/>
-        </React.Fragment>
+        </>
     )
 }

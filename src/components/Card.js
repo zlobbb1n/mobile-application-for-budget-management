@@ -14,8 +14,8 @@ import { Box } from '@mui/system';
 const CardElem = styled(Typography)({
     background: 'linear-gradient(90deg, rgba(33,106,187,1) 0%, rgba(69,9,121,1) 46%, rgba(255,111,0,1) 100%)',
     margin: '7%',
-    marginLeft: '7%',
-    marginRight: '7%',
+    marginLeft: '6%',
+    marginRight: '6%',
     height: 'auto',
     borderRadius: 40 
 })
@@ -34,7 +34,7 @@ export default function Card(){
                 }}>
                 <Grid container justifyContent = 'center'>
                     <Tooltip placement = 'top-left'>
-                        <FormControl variant = 'standard' sx = {{ width: '35%', mr: '40%' }}>    
+                        <FormControl variant = 'standard' sx = {{ width: '35%', mr: '40%', ml: '5%', mt: '1%' }}>    
                             <InputLabel
                                 sx = {{ 
                                     fontWeight: 'bold', 
@@ -62,39 +62,47 @@ export default function Card(){
                     </Tooltip>
                     <Tooltip placement = 'top-right'>
                         <IconButton sx = {{  }} >
-                            <MoreHorizIcon button sx = {{color: 'rgba(255, 255, 255, 0.8)', mt: 1 }}/>
+                            <MoreHorizIcon button sx = {{color: 'rgba(255, 255, 255, 0.8)', mt: 1, mr: 1 }}/>
                         </IconButton>
                     </Tooltip>
                     <Tooltip placement = 'left'>
                         <Typography 
-                            variant = 'h4' 
+                            variant = 'h5' 
                             sx = {{ 
-                                fontWeight: 'bold', 
-                                color: 'rgba(255, 255, 255, 0.8)',
+                                width: '100%',
+                                fontWeight: 'bold',
+                                fontSize: '200%',
+                                color: 'rgba(255, 255, 255, 1)',
                                 mb: '5%',
-                                mr: '40%' 
+                                ml: '10%',
+                                mr: '50%'
                             }}>
                             $3,257.00
                         </Typography >
                     </Tooltip>
                     <Tooltip placement = 'bottom-start'>
+                        
                         <Typography 
                             sx = {{ 
                                 width: '50%', 
                                 display: 'inline-block', 
-                                fontSize: 'middle', 
+                                fontSize: '17px', 
                                 fontWeight: 'bold', 
-                                color: 'rgba(255, 255, 255, 0.8)', 
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                mt: '3%',
+                                mb: '5%',
+                                ml: '4%', 
                                 }}>
-                            <IconButton>
-                                <ArrowDownwardOutlinedIcon sx = {{ color: 'rgba(255, 255, 255, 0.8)' }}/>
+                            <IconButton sx = {{background: 'rgba(0, 0, 0, 0.1)', ml: '10%', mr: 1}}>
+                                <ArrowDownwardOutlinedIcon fontSize = 'small' sx = {{ color: 'rgba(255, 255, 255, 0.8)' }}/>
                             </IconButton>
                             Income
                             <Typography 
-                                variant = 'h5' 
+                                variant = 'h6' 
                                 sx = {{ 
-                                    fontWeight: 'bold', 
-                                    ml: 2 
+                                    fontWeight: 'bold',
+                                    fontSize: '19px',
+                                    ml: '15%',  
                                 }}>
                                     $2,350.00
                             </Typography>
@@ -105,22 +113,25 @@ export default function Card(){
                             sx = {{ 
                                 width: '40%', 
                                 display: 'inline-block', 
-                                fontSize: 'middle', 
+                                fontSize: '17px', 
                                 fontWeight: 'bold', 
                                 color: 'rgba(255, 255, 255, 0.8)',
-                                mb: '2%' 
+                                mb: '5%',
+                                mt: '3%',
+                                mr: '6%'
                             }}>
-                            <IconButton>
-                                <ArrowUpwardOutlinedIcon sx = {{color: 'rgba(255, 255, 255, 0.8)' }} />
+                            <IconButton sx = {{background: 'rgba(0, 0, 0, 0.1)', mr: 1}}>
+                                <ArrowUpwardOutlinedIcon fontSize = 'small' sx = {{color: 'rgba(255, 255, 255, 0.8)' }} />
                             </IconButton>
                             Expenses
                             <Typography 
-                                variant = 'h5' 
+                                variant = 'h6' 
                                 sx = {{ 
-                                    fontWeight: 'bold', 
-                                    ml: 2 
+                                    fontWeight: 'bold',
+                                    fontSize: '19px',
+                                    ml: 6, 
                                 }}>
-                                    $2,350.00
+                                    $950.00
                             </Typography>
                         </Typography>
                     </Tooltip>

@@ -17,6 +17,7 @@ import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsAct
 import styled from '@emotion/styled';
 import Card from '../components/Card';
 import { Transactions } from '../components/Transactions';
+import { Box } from '@mui/system';
 import { Grid, Tooltip } from '@mui/material';
 
 const SyledHome = styled(Typography)({
@@ -27,25 +28,44 @@ const SyledHome = styled(Typography)({
     margin: '0 auto',
 })
 const Transaction = styled(Typography)({
-    fontWeight: 'bold', 
-    display: 'inline-block', 
-    marginTop: '5px', 
-    marginLeft: '5%', 
-    width: '75%'
+    fontWeight: 'bold',   
+    mt: '5px',
+    position: 'absolute',
+    left: 0,
+    paddingLeft: '2%'
+   
 })
 
 export default function Home(){
     
     return (
-        <React.Fragment>
-            
-            <AppBar position = "relative" color = "inherit" sx = {{ top: 0, bottom: 'auto' }}>
+        <>
+            <AppBar 
+                position = "relative" 
+                color = "inherit" 
+                sx = {{ 
+                    top: 0, 
+                    bottom: 'auto',
+                    boxShadow: 'none' 
+                }}>
                 <Toolbar>
-                <IconButton color = "inherit" >
+                <IconButton 
+                    color = "inherit"
+                    sx = {{ 
+                        background: 'rgba(0, 0, 0, 0.03)',
+                        borderRadius: 2,
+                        
+                    }}>
                     <WindowRoundedIcon />
                 </IconButton>
                     <SyledHome variant = 'h5'>Home</SyledHome>
-                <IconButton color = "inherit">
+                <IconButton 
+                    color = "inherit" 
+                    href = '/notifications'
+                    sx = {{ 
+                        background: 'rgba(0, 0, 0, 0.03)',
+                        borderRadius: 2
+                    }}>
                     <NotificationsActiveRoundedIcon />
                 </IconButton>
                 </Toolbar>
@@ -53,19 +73,31 @@ export default function Home(){
             <CssBaseline />
             <Paper square sx = {{ pb: '70px', mt: '0' }}> 
                 <Card/>
-                <Transaction variant='h5'>
-                    Transactions
-                </Transaction>
-                <Typography 
-                    sx = {{
-                        display: 'inline-block',
-                        fontWeight: 'bold',
-                        color: 'rgba(0, 0, 0, 0.5)' 
-                    }}>
-                    See All
-                </Typography> 
+                <Box sx = {{ width: '100%' }}>
+                    <Grid container justifyContent = 'center'>
+                        <Tooltip>
+                            <Transaction variant='h5'>
+                                Transactions
+                            </Transaction>
+                        </Tooltip>
+                        <Tooltip>
+                            <Typography 
+                                sx = {{
+                                    position: 'relative',
+                                    top: 5,
+                                    ml: '75%',
+                                    fontWeight: 'bold',
+                                    color: 'rgba(0, 0, 0, 0.5)' 
+                                }}>
+                                See All
+                            </Typography>
+                        </Tooltip>
+                    </Grid>
+                </Box>
+                
+                 
                 <List sx = {{ mb: 2 }}>
-                    {Transactions.map(({ id, primary, secondary, logo }) => (
+                    {Transactions.map(({ id, primary, secondary, logo, trans }) => (
                         <React.Fragment key={id}>
                             {id === 1 && (   
                                 <ListSubheader sx = {{ bgcolor: 'inherit' }}></ListSubheader>
@@ -77,13 +109,44 @@ export default function Home(){
                                 <ListItemAvatar>
                                     <Avatar alt = "Profile Picture" src={logo} />
                                 </ListItemAvatar>
-                                <ListItemText primary = {primary} secondary = {secondary} />
+                                <ListItemText 
+                                    primary = {
+                                        <Typography 
+                                            sx = {{
+                                                fontWeight: 'bold'
+                                            }}>
+                                            {primary}
+                                        </Typography>
+                                    } 
+                                    secondary = {
+                                        <Typography
+                                            sx = {{
+                                                fontSize: 'small',
+                                                color: 'rgba(0, 0, 0, 0.5)'
+                                            }}>
+                                            {secondary}
+                                        </Typography>
+                                    }
+                                    >
+                                </ListItemText>
+                                <ListItemText>
+                                    <Typography
+                                        sx = {{
+                                            fontWeight: 'bold',
+                                            fontSize: 'large',
+                                            textAlign: 'end',
+                                            color: 'red',
+                                            mr: '6%'
+                                        }}>
+                                        {trans}
+                                    </Typography> 
+                                </ListItemText>
                             </ListItem>
                         </React.Fragment>
                     ))}
                 </List>
             </Paper>
             <BottomNavBar/>
-        </React.Fragment>
+        </>
       );
     }

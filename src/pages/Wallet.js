@@ -19,9 +19,21 @@ const SyledHome = styled(Typography)({
 export default function Wallet(){
     return(
         <React.Fragment>
-            <AppBar position = "relative" color = "inherit" sx = {{ top: 0, bottom: 'auto' }}>
+            <AppBar 
+                position = "relative" 
+                color = "inherit" 
+                sx = {{ 
+                    top: 0, 
+                    bottom: 'auto',
+                    boxShadow: 'none'  
+                }}>
                 <Toolbar>
-                <IconButton color = "inherit" >
+                <IconButton 
+                    color = "inherit"
+                    sx = {{ 
+                        background: 'rgba(0, 0, 0, 0.03)',
+                        borderRadius: 2
+                    }} >
                     <WindowRoundedIcon />
                 </IconButton>
                     <SyledHome variant = 'h5'>Wallet</SyledHome>

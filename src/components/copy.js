@@ -59,7 +59,7 @@ export default function BottomNavBar(){
                 setValue(newValue);
             }}>
             <BottomNavigationAction icon = {<HomeRoundedIcon/>} onClick = {homePage}/>
-            <BottomNavigationAction icon = {<AssessmentRoundedIcon/>} onClick = {overviewPage}/>
+            <BottomNavigationAction icon = {<AssessmentRoundedIcon/>} href = "/overview"/>
             <StyledFab color="primary" aria-label="add">
                 <AddRoundedIcon fontSize='large'/>
             </StyledFab>

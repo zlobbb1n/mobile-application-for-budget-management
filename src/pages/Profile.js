@@ -5,11 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import WindowRoundedIcon from '@mui/icons-material/WindowRounded';
 import styled from '@emotion/styled';
-import { Grid, Paper, Tooltip, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import { Box, Stack } from '@mui/system';
-import Badge from '@mui/material/Badge';
-import Avatar from '@mui/material/Avatar';
+
 
 const SyledHome = styled(Typography)({
     fontWeight: "bold",
@@ -22,13 +20,30 @@ const SyledHome = styled(Typography)({
 export default function Profile(){
     return(
         <React.Fragment>
-            <AppBar position = "relative" color = "inherit" sx = {{ top: 0, bottom: 'auto' }}>
+            <AppBar 
+                position = "relative" 
+                color = "inherit" 
+                sx = {{ 
+                    top: 0, 
+                    bottom: 'auto',
+                    boxShadow: 'none'  
+                }}>
                 <Toolbar>
-                <IconButton color = "inherit" >
+                <IconButton 
+                    color = "inherit"
+                    sx = {{ 
+                        background: 'rgba(0, 0, 0, 0.03)',
+                        borderRadius: 2
+                    }} >
                     <WindowRoundedIcon />
                 </IconButton>
                     <SyledHome variant = 'h5'>Profile</SyledHome>
-                <IconButton color = "inherit">
+                <IconButton 
+                    color = "inherit"
+                    sx = {{ 
+                        background: 'rgba(0, 0, 0, 0.03)',
+                        borderRadius: 2
+                    }}>
                     <EditRoundedIcon/>
                 </IconButton>
                 </Toolbar>

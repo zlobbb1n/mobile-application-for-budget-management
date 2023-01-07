@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BarChart from "./BarChart";
-import { UserData } from "../Data";
+import { UserData } from "../data/Data";
 
 function Chart() {
     const [userData, setUserData] = useState({
