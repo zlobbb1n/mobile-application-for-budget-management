@@ -6,6 +6,7 @@ import Overview from './pages/Overview';
 import Profile from './pages/Profile';
 import Wallet from './pages/Wallet';
 import Notification from './pages/Notification';
+import Settings from './pages/Settings';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/profile" element = {<Profile/>}/>
         <Route path="/wallet" element = {<Wallet/>}/>
         <Route path="/notifications" element = {<Notification/>}/>
+        <Route path="/settings" element = {<Settings/>}/>
       </Routes>                                          
     </BrowserRouter>
     </>

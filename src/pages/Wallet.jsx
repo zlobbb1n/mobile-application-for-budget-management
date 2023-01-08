@@ -45,7 +45,7 @@ export default function Wallet(){
             <Paper square sx = {{ pb: '70px', mt: '0' }}>
                 
             </Paper>
-            <BottomNavBar/>
+            <BottomNavBar value = {3} />
         </React.Fragment>
     )
 }

@@ -42,21 +42,18 @@ const theme = createTheme({
     },
 });
 
-export default function BottomNavBar(){
-    const [value, setValue] = useState(0);
+export default function BottomNavBar( {value} ){
+    // const [value, setValue] = useState(0);
 
     return (
         <ThemeProvider theme={theme}>
             
-        <BottomNavigation 
+        <BottomNavigation
+            value = {value}
             sx = {{
                 width: '100%', 
                 position: 'fixed', 
                 bottom: 0
-            }}
-            value = {value}
-            onChange = {(e, newValue) => {
-                setValue(newValue);
             }}>
             <BottomNavigationAction icon = {<HomeRoundedIcon/>} onClick = {homePage}/>
             <BottomNavigationAction icon = {<AssessmentRoundedIcon/>} onClick = {overviewPage}/>

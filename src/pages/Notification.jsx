@@ -49,16 +49,32 @@ export default function Notification(){
             </Toolbar>
         </AppBar>
         <Typography>
-            <List sx = {{ mb: 2 }}>
-                    {NotificationList.map(({ id, primary, secondary, logo }) => (
+            <List sx = {{ mb: 2, width: '100%' }}>
+                    {NotificationList.map(({ id, primary, secondary, logo, pay }) => (
                         <React.Fragment key={id}>
                             {id === 1 && (
-                                <ListSubheader sx = {{ bgcolor: 'inherit' }}>Today</ListSubheader>
+                                <ListSubheader 
+                                    sx = {{ 
+                                        bgcolor: 'inherit', 
+                                        fontWeight: 'bold',
+                                        fontSize: '100%',
+                                        color: 'rgba(0, 0, 0, 0.5)', 
+                                    }}>
+                                    Today
+                                </ListSubheader>
                             )}
                             {id === 4 && (
-                                <ListSubheader sx = {{ bgcolor: 'inherit' }}>Yesterday</ListSubheader> 
+                                <ListSubheader
+                                    sx = {{ 
+                                        bgcolor: 'inherit', 
+                                        fontWeight: 'bold',
+                                        fontSize: '100%',
+                                        color: 'rgba(0, 0, 0, 0.5)', 
+                                    }}>  
+                                    Yesterday
+                                </ListSubheader> 
                             )}
-                            <ListItem button>
+                            <ListItem button sx = {{ width: '100%' }}>
                                 <ListItemAvatar>
                                     <Avatar 
                                         alt = "Profile Picture" 
@@ -70,6 +86,7 @@ export default function Notification(){
                                         <Typography 
                                             sx = {{
                                                 fontWeight: 'bold',
+                                                color: 'rgba(0, 0, 0, 0.6)',
                                                 mr: '5%'
                                             }}>
                                             {primary}

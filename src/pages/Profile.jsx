@@ -7,6 +7,8 @@ import WindowRoundedIcon from '@mui/icons-material/WindowRounded';
 import styled from '@emotion/styled';
 import { Paper, Typography } from '@mui/material';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import ProfileAvatar from '../components/ProfileAvatar';
+import ProfileMenuList from '../components/ProfileMenuList';
 
 
 const SyledHome = styled(Typography)({
@@ -15,6 +17,17 @@ const SyledHome = styled(Typography)({
     left: 0,
     right: 0,
     margin: '0 auto',
+})
+const Name = styled(Typography)({
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: '3vh'  
+})
+const Mail = styled(Typography)({
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: '2vh',
+    color: 'rgba(0, 0, 0, 0.5)'
 })
 
 export default function Profile(){
@@ -48,10 +61,15 @@ export default function Profile(){
                 </IconButton>
                 </Toolbar>
             </AppBar>
-            <Paper square sx = {{ pb: '70px', mt: '0' }}>
-                
+            <Paper square sx = {{ pb: '70px', }}>
+                <ProfileAvatar/>
+                <Typography>
+                    <Name>Leslie Alexander</Name>
+                    <Mail>leslie@gmail.com</Mail>
+                </Typography>
+                <ProfileMenuList/>
             </Paper>
-            <BottomNavBar/>
+            <BottomNavBar value = {4} />
         </React.Fragment>
     )
 }

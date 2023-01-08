@@ -13,12 +13,13 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import WindowRoundedIcon from '@mui/icons-material/WindowRounded';
-import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
+import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import styled from '@emotion/styled';
 import Card from '../components/Card';
-import { Transactions } from '../components/Transactions';
+import { Transactions } from '../data/Transactions';
 import { Box } from '@mui/system';
-import { Grid, Tooltip } from '@mui/material';
+import { Badge, Grid, Tooltip } from '@mui/material';
+import { NotificationList } from '../data/NotificationData';
 
 const SyledHome = styled(Typography)({
     fontWeight: "bold",
@@ -66,7 +67,13 @@ export default function Home(){
                         background: 'rgba(0, 0, 0, 0.03)',
                         borderRadius: 2
                     }}>
-                    <NotificationsActiveRoundedIcon />
+                        <Badge
+                            color = 'error'
+                            variant = 'dot'
+                            badgeContent = {NotificationList.length}>
+                            <NotificationsRoundedIcon />
+                        </Badge>
+                    
                 </IconButton>
                 </Toolbar>
             </AppBar>
@@ -146,7 +153,7 @@ export default function Home(){
                     ))}
                 </List>
             </Paper>
-            <BottomNavBar/>
+            <BottomNavBar value = {0}/>
         </>
       );
     }

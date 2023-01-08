@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Tooltip, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import CustomButton from '../UI/CustomButton';
-import HelloAvatar from '../UI/HelloAvatar';
+import HelloAvatar from '../components/HelloAvatar';
 
 export default function Hello(){
     return(

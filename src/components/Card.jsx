@@ -12,7 +12,7 @@ import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import { Box } from '@mui/system';
 
 const CardElem = styled(Typography)({
-    background: 'linear-gradient(90deg, rgba(33,106,187,1) 0%, rgba(69,9,121,1) 46%, rgba(255,111,0,1) 100%)',
+    background: 'linear-gradient(43deg, rgba(78,126,229,1) 0%, rgba(188,99,190,1) 50%, rgba(248,132,107,1) 100%)',
     margin: '7%',
     marginLeft: '6%',
     marginRight: '6%',
