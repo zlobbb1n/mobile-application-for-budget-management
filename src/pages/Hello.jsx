@@ -44,8 +44,6 @@ export default function Hello(){
                         sx = {{ 
                             width: '50%', 
                             mt: '17%',
-                            position: 'fixed',
-                            bottom: 0
                         }}>
                         <CustomButton/>
                     </Typography>
