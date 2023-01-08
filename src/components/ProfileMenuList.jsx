@@ -101,7 +101,7 @@ export default function ProfileMenuList() {
         </ListItem>
         <ListItem sx = {{ width: '100%', m: '6% 5%' }} onClick = {Settings}>
             <IconButton
-                href = '/setting'
+                href = '/settings'
                 sx = {{ 
                     bgcolor: '#197874', 
                     color: 'background.paper',
